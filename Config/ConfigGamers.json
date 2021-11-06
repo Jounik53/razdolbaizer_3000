@@ -1,0 +1,28 @@
+{
+  "GamersList": [
+    {
+      "Name": "Valera",
+      "Life": 150,
+      "ChangeGun": 1,
+      "Tenacity": 30
+    },
+    {
+      "Name": "Den",
+      "Life": 70,
+      "ChangeGun": 3,
+      "Tenacity": 50
+    },
+    {
+      "Name": "Andrey",
+      "Life": 70,
+      "ChangeGun": 2,
+      "Tenacity": 50
+    },
+    {
+      "Name": "Mashutik",
+      "Life": 100,
+      "ChangeGun": 2,
+      "Tenacity": 70
+    }
+  ]
+}

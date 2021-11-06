@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\andal\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\andal\\.nuget\\packages"
+    ]
+  }
+}
