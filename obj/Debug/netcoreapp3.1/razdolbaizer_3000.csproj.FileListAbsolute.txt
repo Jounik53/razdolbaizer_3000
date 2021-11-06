@@ -1,0 +1,17 @@
+C:\Users\andal\source\repos\razdolbaizer_3000\bin\Debug\netcoreapp3.1\razdolbaizer_3000.exe
+C:\Users\andal\source\repos\razdolbaizer_3000\bin\Debug\netcoreapp3.1\razdolbaizer_3000.deps.json
+C:\Users\andal\source\repos\razdolbaizer_3000\bin\Debug\netcoreapp3.1\razdolbaizer_3000.runtimeconfig.json
+C:\Users\andal\source\repos\razdolbaizer_3000\bin\Debug\netcoreapp3.1\razdolbaizer_3000.runtimeconfig.dev.json
+C:\Users\andal\source\repos\razdolbaizer_3000\bin\Debug\netcoreapp3.1\razdolbaizer_3000.dll
+C:\Users\andal\source\repos\razdolbaizer_3000\bin\Debug\netcoreapp3.1\razdolbaizer_3000.pdb
+C:\Users\andal\source\repos\razdolbaizer_3000\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\andal\source\repos\razdolbaizer_3000\obj\Debug\netcoreapp3.1\razdolbaizer_3000.AssemblyInfoInputs.cache
+C:\Users\andal\source\repos\razdolbaizer_3000\obj\Debug\netcoreapp3.1\razdolbaizer_3000.AssemblyInfo.cs
+C:\Users\andal\source\repos\razdolbaizer_3000\obj\Debug\netcoreapp3.1\razdolbaizer_3000.csproj.CoreCompileInputs.cache
+C:\Users\andal\source\repos\razdolbaizer_3000\obj\Debug\netcoreapp3.1\razdolbaizer_3000.csproj.CopyComplete
+C:\Users\andal\source\repos\razdolbaizer_3000\obj\Debug\netcoreapp3.1\razdolbaizer_3000.dll
+C:\Users\andal\source\repos\razdolbaizer_3000\obj\Debug\netcoreapp3.1\razdolbaizer_3000.pdb
+C:\Users\andal\source\repos\razdolbaizer_3000\obj\Debug\netcoreapp3.1\razdolbaizer_3000.genruntimeconfig.cache
+C:\Users\andal\source\repos\razdolbaizer_3000\bin\Debug\netcoreapp3.1\Config\ConfigGamers.json
+C:\Users\andal\source\repos\razdolbaizer_3000\bin\Debug\netcoreapp3.1\Config\ConfigGuns.json
+C:\Users\andal\source\repos\razdolbaizer_3000\obj\Debug\netcoreapp3.1\razdolbaizer_3000.csproj.AssemblyReference.cache
