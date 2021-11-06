@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "hx+X/bNxo8qOMEbHSnmVtrwdmSBUXiMjzoev/u4Ie+WinFPB8xiM6nTqPtzmgLDj6B2bt+XfXXQoQyDca0Jxiw==",
+  "dgSpecHash": "CcXlZj02HX44WDvSoznaVwge4YeM0BHrPlwm5dxIJVeT4/EFZYJyXCQRAX+Gf1oeOyp9GuiZ6K7UwAa/LIk82A==",
   "success": true,
-  "projectFilePath": "D:\\GitHub\\razdolbaizer_3000\\razdolbaizer_3000.csproj",
+  "projectFilePath": "I:\\Project_Jounik\\razdolbaizer_3000\\razdolbaizer_3000.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\andal\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\Jouni\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }
