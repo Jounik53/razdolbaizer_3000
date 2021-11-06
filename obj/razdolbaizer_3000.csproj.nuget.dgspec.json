@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\andal\\source\\repos\\razdolbaizer_3000\\razdolbaizer_3000.csproj": {}
+    "D:\\GitHub\\razdolbaizer_3000\\razdolbaizer_3000.csproj": {}
   },
   "projects": {
-    "C:\\Users\\andal\\source\\repos\\razdolbaizer_3000\\razdolbaizer_3000.csproj": {
+    "D:\\GitHub\\razdolbaizer_3000\\razdolbaizer_3000.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\andal\\source\\repos\\razdolbaizer_3000\\razdolbaizer_3000.csproj",
+        "projectUniqueName": "D:\\GitHub\\razdolbaizer_3000\\razdolbaizer_3000.csproj",
         "projectName": "razdolbaizer_3000",
-        "projectPath": "C:\\Users\\andal\\source\\repos\\razdolbaizer_3000\\razdolbaizer_3000.csproj",
+        "projectPath": "D:\\GitHub\\razdolbaizer_3000\\razdolbaizer_3000.csproj",
         "packagesPath": "C:\\Users\\andal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\andal\\source\\repos\\razdolbaizer_3000\\obj\\",
+        "outputPath": "D:\\GitHub\\razdolbaizer_3000\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\andal\\AppData\\Roaming\\NuGet\\NuGet.Config",

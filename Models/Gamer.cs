@@ -43,7 +43,7 @@ namespace razdolbaizer_3000.Models
             opponent.Life -= currentDamage;
 
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"{Name} shoot: damage: {currentDamage}, opoonent {opponent.Name} life {opponent.Life}");
+            Console.WriteLine($"{Name} shoot: damage: {Math.Round(currentDamage, 1)}, opoonent {opponent.Name} life {opponent.Life}");
             Console.ResetColor();
 
             if (opponent.Life <= 0)
