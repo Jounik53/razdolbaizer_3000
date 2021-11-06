@@ -48,19 +48,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\andal\\.nuget\\packages\\": {}
+    "C:\\Users\\Jouni\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\razdolbaizer_3000\\razdolbaizer_3000.csproj",
+      "projectUniqueName": "I:\\Project_Jounik\\razdolbaizer_3000\\razdolbaizer_3000.csproj",
       "projectName": "razdolbaizer_3000",
-      "projectPath": "D:\\GitHub\\razdolbaizer_3000\\razdolbaizer_3000.csproj",
-      "packagesPath": "C:\\Users\\andal\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\razdolbaizer_3000\\obj\\",
+      "projectPath": "I:\\Project_Jounik\\razdolbaizer_3000\\razdolbaizer_3000.csproj",
+      "packagesPath": "C:\\Users\\Jouni\\.nuget\\packages\\",
+      "outputPath": "I:\\Project_Jounik\\razdolbaizer_3000\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\andal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jouni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -68,7 +75,11 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "I:\\Project_Virtoway\\caplugs\\cp-module-order\\src\\Caplugs.OrderModule.Core\\bin\\Debug": {},
+        "I:\\Project_Virtoway\\cp-module-customer\\src\\Caplugs.CustomerModule.Core\\bin\\Debug": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://pkgs.dev.azure.com/caplugs-web/caplugs-ecommerce/_packaging/Caplugs-Virto/nuget/v3/index.json": {},
+        "https://rs-nuget.azurewebsites.net/nuget": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
@@ -106,7 +117,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

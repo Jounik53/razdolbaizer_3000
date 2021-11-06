@@ -44,7 +44,6 @@ namespace razdolbaizer_3000.Models
             }
 
             var currentTenacity = 1.0 + (random.NextDouble() * (this.Tenacity - 1.0));
-            //var currentDamage = Math.Round((double)(this.Gun.Damage * currentTenacity / 100));
             var currentDamage = this.Gun.Damage * currentTenacity / 100;
 
             opponent.Life -= currentDamage;
@@ -52,10 +51,6 @@ namespace razdolbaizer_3000.Models
             _writeConsoleExtend.Shoot($"{Name}({Math.Round(Life, 1)}) " +
                                       $"shoot: damage: {Math.Round(currentDamage, 1)}, " +
                                       $"opoonent {opponent.Name} life {Math.Round(opponent.Life, 1)}");
-
-            //Console.ForegroundColor = ConsoleColor.Red;
-            //Console.WriteLine($"{Name} shoot: damage: {currentDamage}, opoonent {opponent.Name} life {opponent.Life}");
-            //Console.ResetColor();
 
             if (opponent.Life <= 0)
             {

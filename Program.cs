@@ -33,9 +33,6 @@ namespace razdolbaizer_3000
             _writeConsoleExtend = new WriteConsoleExtend();
 
             Initialization();
-            //WriteGamersInfo();
-            //Console.WriteLine("=======================");
-            //WriteGunsInfo();
 
             var gamers = new List<Gamer>();
 
@@ -49,7 +46,6 @@ namespace razdolbaizer_3000
             {
                 gamer.ChoceGun(_guns);
                 _writeConsoleExtend.WritePlayerName($"Player {gamer.Name}, his gun {gamer.Gun.Name}");
-                //Console.WriteLine($"Player {gamer.Name}, his gun {gamer.Gun.Name}");
             }
 
             System.Threading.Thread.Sleep(3000);
@@ -57,16 +53,7 @@ namespace razdolbaizer_3000
             _writeConsoleExtend.WriteLine("Start Fighting 3.....", 500);
             _writeConsoleExtend.WriteLine("Start Fighting 2.....", 500);
             _writeConsoleExtend.WriteLine("Start Fighting 1.....", 500);
-
-            //Console.WriteLine("Start Fighting 3.....");
-            //System.Threading.Thread.Sleep(500);
-
-            //Console.WriteLine("Start Fighting 2.....");
-            //System.Threading.Thread.Sleep(500);
-
-            //Console.WriteLine("Start Fighting 1.....");
-            //System.Threading.Thread.Sleep(500);
-
+            
             bool endGame = true;
             var count = 0;
 
@@ -90,20 +77,12 @@ namespace razdolbaizer_3000
                 }
                 catch (ReloadException e)
                 {
-                    //Console.ForegroundColor = ConsoleColor.Green;
-                    //Console.WriteLine(e.Message);
-                    //Console.ResetColor();
                     _writeConsoleExtend.WriteReloadPlayer(e.Message);
                 }
                 catch (DeadException e)
                 {
                     _writeConsoleExtend.WriteDeadMessage(e.Message);
                     _writeConsoleExtend.WriteWinPlayerName($"Player {gamers[count].Name} is WIN!!!");
-
-                    //Console.ForegroundColor = ConsoleColor.Yellow;
-                    //Console.WriteLine(e.Message);
-                    //Console.WriteLine($"Player {gamers[count].Name} is WIN!!!");
-                    //Console.ResetColor();
 
                     endGame = false;
                 }
