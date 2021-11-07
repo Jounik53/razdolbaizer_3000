@@ -61,20 +61,23 @@ namespace razdolbaizer_3000.Extensions
             if (critical)
             {
                 message += " !Critical Damage!";
+                WriteFrame("-", message, colorShoot);
+                Console.WriteLine();
+                Console.WriteLine(message);
+                WriteFrame("-", message, colorShoot);
             }
 
             if (secondGamer)
             {
-                //First version
-                //var lengthMessage = message.Length;
-                //Console.CursorLeft = Console.BufferWidth - lengthMessage;
-
                 Console.CursorLeft = firstGamerName.Length;
                 Console.ForegroundColor = _colorShootSecond;
             }
 
-            
-            Console.Write(message);
+            if (!critical)
+            {
+                Console.Write(message);
+            }
+
             Console.ResetColor();
         }
 
@@ -109,32 +112,41 @@ namespace razdolbaizer_3000.Extensions
 
         public void WriteWinPlayerName(string message)
         {
-            var countSymbolMessage = message.Length;
-
             Console.ForegroundColor = colorWinPlayerName;
             // Enter top
             Console.WriteLine();
-            for (int i = 0; i < countSymbolMessage + 4; i++)
-            {
-                Console.Write("=");
-            }
+            
+            WriteFrame("=", message, colorWinPlayerName);
+            
             Console.WriteLine();
 
             Console.WriteLine($"= {message} =");
 
-            for (int i = 0; i < countSymbolMessage + 4; i++)
-            {
-                Console.Write("=");
-            }
+            WriteFrame("=", message, colorWinPlayerName);
         }
 
         public void WriteReloadPlayer(string message)
         {
+            Console.WriteLine();
             Console.ForegroundColor = colorReloadPlayer;
             Console.WriteLine(message);
             Console.ResetColor();
         }
 
+
+        private void WriteFrame(string symbol, string message, ConsoleColor color)
+        {
+            var countSymbolMessage = message.Length;
+
+            Console.ForegroundColor = color;
+
+            for (int i = 0; i < countSymbolMessage + 4; i++)
+            {
+                Console.Write(symbol);
+            }
+
+            Console.ResetColor();
+        }
 
         private void ApplyCustomColor()
         {

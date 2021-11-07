@@ -23,7 +23,7 @@ namespace razdolbaizer_3000.Models
         public int ChangeGun { get; set; }
         public double Tenacity { get; set; }
 
-        public void ChoceGun(Guns guns)
+        public void ChoiceGun(Guns guns)
         {
             var number = _random.Next(0, guns.GunsList.Length - 1);
 
@@ -54,7 +54,7 @@ namespace razdolbaizer_3000.Models
 
             _writeConsoleExtend.Shoot($"{Name}({Math.Round(Life, 1)}) " +
                                       $"shoot: damage: {Math.Round(currentDamage, 1)}, " +
-                                      $"opoonent {opponent.Name} life {Math.Round(opponent.Life, 1)}", ChanceCritical(), secondGamer, Name);
+                                      $"opponent {opponent.Name} life {Math.Round(opponent.Life, 1)}", ChanceCritical(), secondGamer, Name);
 
             if (opponent.Life <= 0)
             {

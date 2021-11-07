@@ -50,7 +50,7 @@ namespace razdolbaizer_3000
 
             foreach (var gamer in gamers)
             {
-                gamer.ChoceGun(_guns);
+                gamer.ChoiceGun(_guns);
                 _writeConsoleExtend.WritePlayerName($"Player {gamer.Name}, his gun {gamer.Gun.Name}");
             }
 
