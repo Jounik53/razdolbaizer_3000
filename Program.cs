@@ -10,8 +10,8 @@ namespace razdolbaizer_3000
 {
     class Program
     {
-        public const string _configGamersPath = @"Config\ConfigGamers.json";
-        public const string _configGunsPath = @"Config\ConfigGuns.json";
+        public const string ConfigGamersPath = @"Config\ConfigGamers.json";
+        public const string ConfigGunsPath = @"Config\ConfigGuns.json";
 
         private static WriteConsoleExtend _writeConsoleExtend;
 
@@ -38,10 +38,17 @@ namespace razdolbaizer_3000
 
             for (int i = 0; i < 2; i++)
             {
-                gamers.Add(ChoceGamer());
+                if (i > 0)
+                {
+                    gamers.Add(ChoiceGamer(gamers[0]));
+                }
+                else
+                {
+                    gamers.Add(ChoiceGamer());
+                }
+                
             }
-                       
-
+            
             foreach(var gamer in gamers)
             {
                 gamer.ChoceGun(_guns);
@@ -59,21 +66,21 @@ namespace razdolbaizer_3000
 
             while (endGame)
             {
-                var _count = 1;
+                var unCounty = 1;
                 if(count == 0)
                 {
                     count = 1;
-                    _count = 0;
+                    unCounty = 0;
                 }
                 else
                 {
                     count = 0;
-                    _count = 1;
+                    unCounty = 1;
                 }
                 
                 try
                 {
-                    gamers[count].Shoot(gamers[_count]);
+                    gamers[count].Shoot(gamers[unCounty]);
                 }
                 catch (ReloadException e)
                 {
@@ -97,20 +104,39 @@ namespace razdolbaizer_3000
         
         public static void Initialization()
         {
-            GetConfigGuns(_configGunsPath);
-            GetConfigGamers(_configGamersPath);
+            GetConfigGuns(ConfigGunsPath);
+            GetConfigGamers(ConfigGamersPath);
         }
 
-        #region privateConfigBlock
+        #region Privat configuration block
 
-        private static Gamer ChoceGamer()
+        private static Gamer ChoiceGamer(Gamer firstGamer = null)
         {
             var random = new Random();
-            var number = random.Next(0, _gamers.GamersList.Length - 1);
+            var number = random.Next(0, _gamers.GamersList.Length);
+
+            if (firstGamer != null)
+            {
+                if (firstGamer.Name == _gamers.GamersList[number].Name)
+                {
+                    ChoiceGamer(firstGamer);
+                }
+            }
 
             return _gamers.GamersList[number];
         }
+        
+        private static void GetConfigGuns(string pathConfigFile)
+        {
+            _guns = JsonConvert.DeserializeObject<Guns>(File.ReadAllText(pathConfigFile));
+        }
 
+        private static void GetConfigGamers(string pathConfigFile)
+        {
+            _gamers = JsonConvert.DeserializeObject<Gamers>(File.ReadAllText(pathConfigFile));
+        }
+
+        #region Private Get info block
         private static void WriteGamersInfo()
         {
             foreach (var item in _gamers.GamersList)
@@ -134,15 +160,7 @@ namespace razdolbaizer_3000
                 Console.WriteLine($"Количество патронов: {item.Magazine}");
             }
         }
-        private static void GetConfigGuns(string pathConfigFile)
-        {
-            _guns = JsonConvert.DeserializeObject<Guns>(File.ReadAllText(pathConfigFile));
-        }
-
-        private static void GetConfigGamers(string pathConfigFile)
-        {
-            _gamers = JsonConvert.DeserializeObject<Gamers>(File.ReadAllText(pathConfigFile));
-        }
+        #endregion
         #endregion
     }
 }

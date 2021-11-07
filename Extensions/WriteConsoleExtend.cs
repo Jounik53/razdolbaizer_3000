@@ -49,12 +49,19 @@ namespace razdolbaizer_3000.Extensions
         /// Method shoot in custom color
         /// </summary>
         /// <param name="message"></param>
-        public void Shoot(string message)
+        public void Shoot(string message, bool critical = false)
         {
             ApplyCustomColor();
 
             Console.ForegroundColor = colorShoot;
-            Console.WriteLine(message);
+            if (!critical)
+            {
+                Console.WriteLine(message);
+            }
+            else
+            {
+                Console.WriteLine(message + " !Critical Damage!");
+            }
             Console.ResetColor();
         }
 
