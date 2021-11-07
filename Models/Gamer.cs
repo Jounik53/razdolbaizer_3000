@@ -54,7 +54,7 @@ namespace razdolbaizer_3000.Models
 
             _writeConsoleExtend.Shoot($"{Name}({Math.Round(Life, 1)}) " +
                                       $"shoot: damage: {Math.Round(currentDamage, 1)}, " +
-                                      $"opoonent {opponent.Name} life {Math.Round(opponent.Life, 1)}", ChanceCritical(), secondGamer);
+                                      $"opoonent {opponent.Name} life {Math.Round(opponent.Life, 1)}", ChanceCritical(), secondGamer, Name);
 
             if (opponent.Life <= 0)
             {

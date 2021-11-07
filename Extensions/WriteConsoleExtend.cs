@@ -52,7 +52,7 @@ namespace razdolbaizer_3000.Extensions
         /// Method shoot in custom color
         /// </summary>
         /// <param name="message"></param>
-        public void Shoot(string message, bool critical = false, bool secondGamer = false)
+        public void Shoot(string message, bool critical = false, bool secondGamer = false, string firstGamerName = "")
         {
             ApplyCustomColor();
 
@@ -65,8 +65,11 @@ namespace razdolbaizer_3000.Extensions
 
             if (secondGamer)
             {
-                var lengthMessage = message.Length;
-                Console.CursorLeft = Console.BufferWidth - lengthMessage;
+                //First version
+                //var lengthMessage = message.Length;
+                //Console.CursorLeft = Console.BufferWidth - lengthMessage;
+
+                Console.CursorLeft = firstGamerName.Length;
                 Console.ForegroundColor = _colorShootSecond;
             }
 
