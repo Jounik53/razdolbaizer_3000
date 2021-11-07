@@ -80,7 +80,15 @@ namespace razdolbaizer_3000
                 
                 try
                 {
-                    gamers[count].Shoot(gamers[unCounty]);
+                    if (count == 1)
+                    {
+                        gamers[count].Shoot(gamers[unCounty], true);
+                    }
+                    else
+                    {
+                        gamers[count].Shoot(gamers[unCounty]);
+                    }
+                    
                 }
                 catch (ReloadException e)
                 {
@@ -119,7 +127,7 @@ namespace razdolbaizer_3000
             {
                 if (firstGamer.Name == _gamers.GamersList[number].Name)
                 {
-                    ChoiceGamer(firstGamer);
+                    return ChoiceGamer(firstGamer);
                 }
             }
 

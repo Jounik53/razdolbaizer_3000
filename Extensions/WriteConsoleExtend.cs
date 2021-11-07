@@ -10,6 +10,7 @@ namespace razdolbaizer_3000.Extensions
         private readonly ConsoleColor _defaultTextConsole = ConsoleColor.White;
 
         private readonly ConsoleColor _colorShoot = ConsoleColor.DarkRed;
+        private readonly ConsoleColor _colorShootSecond = ConsoleColor.Red;
         private readonly ConsoleColor _colorPlayerName = ConsoleColor.DarkMagenta;
         private readonly ConsoleColor _colorDeadPlayerName = ConsoleColor.Yellow;
         private readonly ConsoleColor _colorWinPlayerName = ConsoleColor.Cyan;
@@ -21,6 +22,7 @@ namespace razdolbaizer_3000.Extensions
         private ConsoleColor textConsole;
 
         private ConsoleColor colorShoot;
+        private ConsoleColor colorShootSecond;
         private ConsoleColor colorPlayerName;
         private ConsoleColor colorDeadPlayerName;
         private ConsoleColor colorWinPlayerName;
@@ -33,7 +35,7 @@ namespace razdolbaizer_3000.Extensions
         }
 
         public WriteConsoleExtend(ConsoleColor textConsole, ConsoleColor colorShoot, ConsoleColor colorPlayerName,
-            ConsoleColor colorDeadPlayerName, ConsoleColor colorWinPlayerName, ConsoleColor colorReloadPlayer)
+            ConsoleColor colorDeadPlayerName, ConsoleColor colorWinPlayerName, ConsoleColor colorReloadPlayer, ConsoleColor colorShootSecond)
         {
             this.textConsole = textConsole;
             this.colorShoot = colorShoot;
@@ -41,6 +43,7 @@ namespace razdolbaizer_3000.Extensions
             this.colorDeadPlayerName = colorDeadPlayerName;
             this.colorWinPlayerName = colorWinPlayerName;
             this.colorReloadPlayer = colorReloadPlayer;
+            this.colorShootSecond = colorShootSecond;
 
             _isCustomColor = true;
         }
@@ -49,19 +52,26 @@ namespace razdolbaizer_3000.Extensions
         /// Method shoot in custom color
         /// </summary>
         /// <param name="message"></param>
-        public void Shoot(string message, bool critical = false)
+        public void Shoot(string message, bool critical = false, bool secondGamer = false)
         {
             ApplyCustomColor();
 
             Console.ForegroundColor = colorShoot;
-            if (!critical)
+            Console.WriteLine();
+            if (critical)
             {
-                Console.WriteLine(message);
+                message += " !Critical Damage!";
             }
-            else
+
+            if (secondGamer)
             {
-                Console.WriteLine(message + " !Critical Damage!");
+                var lengthMessage = message.Length;
+                Console.CursorLeft = Console.BufferWidth - lengthMessage;
+                Console.ForegroundColor = _colorShootSecond;
             }
+
+            
+            Console.Write(message);
             Console.ResetColor();
         }
 
@@ -88,6 +98,7 @@ namespace razdolbaizer_3000.Extensions
 
         public void WriteDeadMessage(string message)
         {
+            Console.WriteLine();
             Console.ForegroundColor = colorDeadPlayerName;
             Console.WriteLine(message);
             Console.ResetColor();
@@ -128,6 +139,7 @@ namespace razdolbaizer_3000.Extensions
             {
                 textConsole = _defaultTextConsole;
                 colorShoot = _colorShoot;
+                colorShootSecond = _colorShootSecond;
                 colorPlayerName = _colorPlayerName;
                 colorDeadPlayerName = _colorDeadPlayerName;
                 colorWinPlayerName = _colorWinPlayerName;

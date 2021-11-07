@@ -34,7 +34,7 @@ namespace razdolbaizer_3000.Models
 
         public void Reload() => this.Gun.Magazine = currentMagazine;
 
-        public void Shoot(Gamer opponent)
+        public void Shoot(Gamer opponent, bool secondGamer = false)
         {
             if (this.Gun.Load == false)
             {
@@ -54,7 +54,7 @@ namespace razdolbaizer_3000.Models
 
             _writeConsoleExtend.Shoot($"{Name}({Math.Round(Life, 1)}) " +
                                       $"shoot: damage: {Math.Round(currentDamage, 1)}, " +
-                                      $"opoonent {opponent.Name} life {Math.Round(opponent.Life, 1)}", ChanceCritical());
+                                      $"opoonent {opponent.Name} life {Math.Round(opponent.Life, 1)}", ChanceCritical(), secondGamer);
 
             if (opponent.Life <= 0)
             {
