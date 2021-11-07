@@ -17,7 +17,7 @@ namespace razdolbaizer_3000
 
         public static Guns _guns;
         public static Gamers _gamers;
-        
+
         static void Main(string[] args)
         {
             for (int i = 0; i < 3; i++)
@@ -28,7 +28,7 @@ namespace razdolbaizer_3000
                 Console.Clear();
                 System.Threading.Thread.Sleep(400);
             }
-            
+
 
             _writeConsoleExtend = new WriteConsoleExtend();
 
@@ -46,28 +46,27 @@ namespace razdolbaizer_3000
                 {
                     gamers.Add(ChoiceGamer());
                 }
-                
             }
-            
-            foreach(var gamer in gamers)
+
+            foreach (var gamer in gamers)
             {
                 gamer.ChoceGun(_guns);
                 _writeConsoleExtend.WritePlayerName($"Player {gamer.Name}, his gun {gamer.Gun.Name}");
             }
 
             System.Threading.Thread.Sleep(3000);
-                       
+
             _writeConsoleExtend.WriteLine("Start Fighting 3.....", 500);
             _writeConsoleExtend.WriteLine("Start Fighting 2.....", 500);
             _writeConsoleExtend.WriteLine("Start Fighting 1.....", 500);
-            
+
             bool endGame = true;
             var count = 0;
 
             while (endGame)
             {
                 var unCounty = 1;
-                if(count == 0)
+                if (count == 0)
                 {
                     count = 1;
                     unCounty = 0;
@@ -77,18 +76,10 @@ namespace razdolbaizer_3000
                     count = 0;
                     unCounty = 1;
                 }
-                
+
                 try
                 {
-                    if (count == 1)
-                    {
-                        gamers[count].Shoot(gamers[unCounty], true);
-                    }
-                    else
-                    {
-                        gamers[count].Shoot(gamers[unCounty]);
-                    }
-                    
+                    gamers[count].Shoot(gamers[unCounty], count == 1);
                 }
                 catch (ReloadException e)
                 {
@@ -101,15 +92,14 @@ namespace razdolbaizer_3000
 
                     endGame = false;
                 }
-                                
+
                 System.Threading.Thread.Sleep(500);
             }
 
             Console.ReadKey();
-
         }
 
-        
+
         public static void Initialization()
         {
             GetConfigGuns(ConfigGunsPath);
@@ -133,7 +123,7 @@ namespace razdolbaizer_3000
 
             return _gamers.GamersList[number];
         }
-        
+
         private static void GetConfigGuns(string pathConfigFile)
         {
             _guns = JsonConvert.DeserializeObject<Guns>(File.ReadAllText(pathConfigFile));
@@ -145,6 +135,7 @@ namespace razdolbaizer_3000
         }
 
         #region Private Get info block
+
         private static void WriteGamersInfo()
         {
             foreach (var item in _gamers.GamersList)
@@ -168,7 +159,9 @@ namespace razdolbaizer_3000
                 Console.WriteLine($"Количество патронов: {item.Magazine}");
             }
         }
+
         #endregion
+
         #endregion
     }
 }
