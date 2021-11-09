@@ -4,6 +4,7 @@ using razdolbaizer_3000.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using razdolbaizer_3000.Extensions;
 
 namespace razdolbaizer_3000
@@ -36,6 +37,7 @@ namespace razdolbaizer_3000
 
             var gamers = new List<Gamer>();
 
+            //Change: ChoiceGames(gamers)
             for (int i = 0; i < 2; i++)
             {
                 if (i > 0)
@@ -48,6 +50,7 @@ namespace razdolbaizer_3000
                 }
             }
 
+            //Change: ChoiceGamerGuns(gamers)
             foreach (var gamer in gamers)
             {
                 gamer.ChoiceGun(_guns);
@@ -105,6 +108,35 @@ namespace razdolbaizer_3000
             GetConfigGuns(ConfigGunsPath);
             GetConfigGamers(ConfigGamersPath);
         }
+
+        #region Private choise block
+
+        private void ChoiceGamerGuns(List<Gamer> gamers)
+        {
+            foreach (var gamer in gamers)
+            {
+                gamer.ChoiceGun(_guns);
+                _writeConsoleExtend.WritePlayerName($"Player {gamer.Name}, his gun {gamer.Gun.Name}");
+            }
+        }
+
+        private void ChoiceGames(List<Gamer> gamers)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                if (i > 0)
+                {
+                    gamers.Add(ChoiceGamer(gamers[0]));
+                }
+                else
+                {
+                    gamers.Add(ChoiceGamer());
+                }
+
+                _writeConsoleExtend.WritePlayerName($"Player {gamers.LastOrDefault()?.Name} in game...");
+            }
+        }
+        #endregion
 
         #region Privat configuration block
 
