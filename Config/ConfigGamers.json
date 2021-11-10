@@ -4,25 +4,29 @@
       "Name": "Valera",
       "Life": 150,
       "ChangeGun": 1,
-      "Tenacity": 30
+      "Tenacity": 30,
+      "ChanceMiss": 60
     },
     {
       "Name": "Den",
       "Life": 70,
       "ChangeGun": 3,
-      "Tenacity": 50
+      "Tenacity": 50,
+      "ChanceMiss": 30
     },
     {
       "Name": "Andrey",
       "Life": 70,
       "ChangeGun": 2,
-      "Tenacity": 50
+      "Tenacity": 50,
+      "ChanceMiss": 30
     },
     {
       "Name": "Mashutik",
       "Life": 100,
       "ChangeGun": 2,
-      "Tenacity": 70
+      "Tenacity": 70,
+      "ChanceMiss": 35
     }
   ]
 }
