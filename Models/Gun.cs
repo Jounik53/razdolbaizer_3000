@@ -10,6 +10,7 @@ namespace razdolbaizer_3000.Models
         public double Damage { get; set; }
         public double CritDamage { get; set; }  //урон от крита
         public double ChanceCrit { get; set; } // шанс крита(процент)
+        
         public bool Load 
         {
             get
@@ -27,7 +28,7 @@ namespace razdolbaizer_3000.Models
         {
             get
             {
-                if (ChanceCrit >= 1)
+                if (ChanceCrit >= 100)
                 {
                     return true;
                 }

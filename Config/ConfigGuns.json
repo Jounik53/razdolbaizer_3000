@@ -50,23 +50,23 @@
       "Chancecrit": 40
     },
     {
-      "Model": "Winfield",
+      "Name": "Winfield",
       "Calibr": "5.32",
-      "Magazin": 12,
+      "Magazine": 12,
       "Damage": 9,
       "Chancecrit": 32
     },
     {
-      "Model": "Nagan",
+      "Name": "Nagan",
       "Calibr": "3",
-      "Magazin": 6,
+      "Magazine": 6,
       "Damage": 7,
       "Chancecrit": 12
     },
     {
-      "Model": "M-16",
+      "Name": "M-16",
       "Calibr": "7.62",
-      "Magazin": 30,
+      "Magazine": 30,
       "Damage": 13,
       "Chancecrit": 39
     }

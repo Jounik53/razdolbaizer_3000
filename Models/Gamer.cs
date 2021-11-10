@@ -9,6 +9,7 @@ namespace razdolbaizer_3000.Models
         private readonly WriteConsoleExtend _writeConsoleExtend;//Описания сервиса расширяющего методы вывода в консоль
         private int currentMagazine;
         private Random _random;
+        private double currentChanceCrit;
 
         public Gamer()
         {
@@ -29,6 +30,7 @@ namespace razdolbaizer_3000.Models
 
             this.Gun = guns.GunsList[number];
             currentMagazine = this.Gun.Magazine;
+            currentChanceCrit = this.Gun.ChanceCrit;
             this.Gun.Initialization();
         }
 
@@ -45,16 +47,26 @@ namespace razdolbaizer_3000.Models
             var currentTenacity = 1.0 + (_random.NextDouble() * (this.Tenacity - 1.0));
             var currentDamage = this.Gun.Damage * currentTenacity / 100;
 
-            if (ChanceCritical())
+            if (this.Gun.Chance)
             {
                 currentDamage = GetCriticalDamage(currentDamage);
+                _writeConsoleExtend.Shoot($"{Name}({Math.Round(Life, 1)}) " +
+                                       $"shoot: Critdamage: {Math.Round(currentDamage, 1)}, " +
+                                       $"opponent {opponent.Name} life {Math.Round(opponent.Life, 1)}", Gun.Chance, secondGamer, Name);
+                Gun.ChanceCrit = currentChanceCrit;
             }
 
             opponent.Life -= currentDamage;
+            Gun.ChanceCrit += currentChanceCrit;
+            if(!Gun.Chance)
+            {
+                _writeConsoleExtend.Shoot($"{Name}({Math.Round(Life, 1)}) " +
+                                     $"shoot: damage: {Math.Round(currentDamage, 1)}, " +
+                                     $"opponent {opponent.Name} life {Math.Round(opponent.Life, 1)}", Gun.Chance, secondGamer, Name);
+            }
+           
+            
 
-            _writeConsoleExtend.Shoot($"{Name}({Math.Round(Life, 1)}) " +
-                                      $"shoot: damage: {Math.Round(currentDamage, 1)}, " +
-                                      $"opponent {opponent.Name} life {Math.Round(opponent.Life, 1)}", ChanceCritical(), secondGamer, Name);
 
             if (opponent.Life <= 0)
             {
