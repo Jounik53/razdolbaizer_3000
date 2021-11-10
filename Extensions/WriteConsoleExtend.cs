@@ -15,6 +15,7 @@ namespace razdolbaizer_3000.Extensions
         private readonly ConsoleColor _colorDeadPlayerName = ConsoleColor.Yellow;
         private readonly ConsoleColor _colorWinPlayerName = ConsoleColor.Cyan;
         private readonly ConsoleColor _colorReloadPlayer = ConsoleColor.DarkGreen;
+        private readonly ConsoleColor _colorMissPlayer = ConsoleColor.Yellow;
 
         /// <summary>
         /// Custom color settings
@@ -27,6 +28,7 @@ namespace razdolbaizer_3000.Extensions
         private ConsoleColor colorDeadPlayerName;
         private ConsoleColor colorWinPlayerName;
         private ConsoleColor colorReloadPlayer;
+        private ConsoleColor colorMissPlayer;
 
         private bool _isCustomColor = false;
 
@@ -35,7 +37,8 @@ namespace razdolbaizer_3000.Extensions
         }
 
         public WriteConsoleExtend(ConsoleColor textConsole, ConsoleColor colorShoot, ConsoleColor colorPlayerName,
-            ConsoleColor colorDeadPlayerName, ConsoleColor colorWinPlayerName, ConsoleColor colorReloadPlayer, ConsoleColor colorShootSecond)
+            ConsoleColor colorDeadPlayerName, ConsoleColor colorWinPlayerName, ConsoleColor colorReloadPlayer
+            , ConsoleColor colorShootSecond, ConsoleColor colorMissPlayer)
         {
             this.textConsole = textConsole;
             this.colorShoot = colorShoot;
@@ -44,8 +47,25 @@ namespace razdolbaizer_3000.Extensions
             this.colorWinPlayerName = colorWinPlayerName;
             this.colorReloadPlayer = colorReloadPlayer;
             this.colorShootSecond = colorShootSecond;
+            this.colorMissPlayer = colorMissPlayer;
 
             _isCustomColor = true;
+        }
+
+        public void Miss(string message)
+        {
+            ApplyCustomColor();
+
+            var wigth = Console.WindowWidth;
+            var lengthMessage = message.Length;
+
+            var cursorPos = (wigth / 2) - (lengthMessage / 2);
+
+            Console.ForegroundColor = colorMissPlayer;
+            Console.CursorLeft = cursorPos;
+            Console.WriteLine(message);
+            Console.ResetColor();
+
         }
 
         /// <summary>
