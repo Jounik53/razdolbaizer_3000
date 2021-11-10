@@ -84,7 +84,7 @@ namespace razdolbaizer_3000.Models
                                      $"opponent {opponent.Name} life {Math.Round(opponent.Life, 1)}", Gun.Chance, secondGamer, Name);
             }
             
-            if (Chance == true)
+            if (Chance)
             {
                 ChanceMiss = currentChanceMiss;
                 _writeConsoleExtend.Miss($"Player {Name} is missing");

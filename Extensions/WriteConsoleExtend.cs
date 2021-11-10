@@ -56,6 +56,8 @@ namespace razdolbaizer_3000.Extensions
         {
             ApplyCustomColor();
 
+            Console.WriteLine();
+
             var wigth = Console.WindowWidth;
             var lengthMessage = message.Length;
 
@@ -179,6 +181,7 @@ namespace razdolbaizer_3000.Extensions
                 colorDeadPlayerName = _colorDeadPlayerName;
                 colorWinPlayerName = _colorWinPlayerName;
                 colorReloadPlayer = _colorReloadPlayer;
+                colorMissPlayer = _colorMissPlayer;
             }
         }
     }
