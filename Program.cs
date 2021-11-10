@@ -23,7 +23,7 @@ namespace razdolbaizer_3000
         {
             for (int i = 0; i < 3; i++)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Red;//ком
                 Console.WriteLine("Time to dead!");
                 System.Threading.Thread.Sleep(600);
                 Console.Clear();
