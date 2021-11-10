@@ -6,7 +6,7 @@ namespace razdolbaizer_3000.Models
 {
     public class Gamer
     {
-        private readonly WriteConsoleExtend _writeConsoleExtend;
+        private readonly WriteConsoleExtend _writeConsoleExtend;//5455
         private int currentMagazine;
         private Random _random;
 
