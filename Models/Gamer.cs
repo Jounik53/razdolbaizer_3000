@@ -9,6 +9,8 @@ namespace razdolbaizer_3000.Models
         private readonly WriteConsoleExtend _writeConsoleExtend;//Описания сервиса расширяющего методы вывода в консоль
         private int currentMagazine;
         private Random _random;
+        private double currentChanceCrit;
+        private double currentChanceMiss;
 
         public Gamer()
         {
@@ -22,13 +24,28 @@ namespace razdolbaizer_3000.Models
         public double Life { get; set; }
         public int ChangeGun { get; set; }
         public double Tenacity { get; set; }
+        public double ChanceMiss { get; set; }
+
+        public bool Chance
+        {
+            get
+            {
+                if (ChanceMiss >= 100)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+        }
 
         public void ChoiceGun(Guns guns)
         {
             var number = _random.Next(0, guns.GunsList.Length - 1);
-
             this.Gun = guns.GunsList[number];
             currentMagazine = this.Gun.Magazine;
+            currentChanceCrit = this.Gun.ChanceCrit;
+            currentChanceMiss = this.ChanceMiss;
             this.Gun.Initialization();
         }
 
@@ -45,16 +62,36 @@ namespace razdolbaizer_3000.Models
             var currentTenacity = 1.0 + (_random.NextDouble() * (this.Tenacity - 1.0));
             var currentDamage = this.Gun.Damage * currentTenacity / 100;
 
-            if (ChanceCritical())
+            if (this.Gun.Chance)
             {
                 currentDamage = GetCriticalDamage(currentDamage);
+                _writeConsoleExtend.Shoot($"{Name}({Math.Round(Life, 1)}) " +
+                                       $"shoot: Critdamage: {Math.Round(currentDamage, 1)}, " +
+                                       $"opponent {opponent.Name} life {Math.Round(opponent.Life, 1)}", Gun.Chance, secondGamer, Name);
+                Gun.ChanceCrit = currentChanceCrit;
+                ChanceMiss += currentChanceMiss * 2;
             }
 
-            opponent.Life -= currentDamage;
+            if(!Gun.Chance)
+            {
+                ChanceMiss += currentChanceMiss;
+                
+                Gun.ChanceCrit += currentChanceCrit;
+                _writeConsoleExtend.Shoot($"{Name}({Math.Round(Life, 1)}) " +
+                                     $"shoot: damage: {Math.Round(currentDamage, 1)}, " +
+                                     $"opponent {opponent.Name} life {Math.Round(opponent.Life, 1)}", Gun.Chance, secondGamer, Name);
+            }
+            
+            if (Chance)
+            {
+                ChanceMiss = currentChanceMiss;
+                _writeConsoleExtend.Miss($"Player {Name} is missing");
+            }
+            else
+            {
+                opponent.Life -= currentDamage;
+            }
 
-            _writeConsoleExtend.Shoot($"{Name}({Math.Round(Life, 1)}) " +
-                                      $"shoot: damage: {Math.Round(currentDamage, 1)}, " +
-                                      $"opponent {opponent.Name} life {Math.Round(opponent.Life, 1)}", ChanceCritical(), secondGamer, Name);
 
             if (opponent.Life <= 0)
             {
@@ -76,6 +113,8 @@ namespace razdolbaizer_3000.Models
 
             return false;
         }
+
+        
 
         private double GetCriticalDamage(double currentDamage) => currentDamage * 2;
     }

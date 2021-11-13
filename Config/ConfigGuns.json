@@ -4,43 +4,71 @@
       "Name": "AK47",
       "Calibr": "5.56",
       "Magazine": 30,
-      "Damage": 25
+      "Damage": 25,
+      "Chancecrit": 40
     },
     {
       "Name": "MP5",
       "Calibr": "9",
       "Magazine": 40,
-      "Damage": 15
+      "Damage": 15,
+      "Chancecrit": 32
     },
     {
       "Name": "M16",
       "Calibr": "5.56",
       "Magazine": 40,
-      "Damage": 20
+      "Damage": 20,
+      "Chancecrit": 24
     },
     {
       "Name": "PP",
       "Calibr": "9",
       "Magazine": 30,
-      "Damage": 10
+      "Damage": 10,
+      "Chancecrit": 13
     },
     {
       "Name": "Beneli M4",
       "Calibr": "12",
       "Magazine": 10,
-      "Damage": 50
+      "Damage": 50,
+      "Chancecrit": 34
     },
     {
       "Name": "PM",
       "Calibr": "9",
       "Magazine": 18,
-      "Damage": 7
+      "Damage": 7,
+      "Chancecrit": 10
     },
     {
       "Name": "DesertEagle",
       "Calibr": "9",
       "Magazine": 7,
-      "Damage": 50
+      "Damage": 50,
+      "Chancecrit": 40
+    },
+    {
+      "Name": "Winfield",
+      "Calibr": "5.32",
+      "Magazine": 12,
+      "Damage": 9,
+      "Chancecrit": 32
+    },
+    {
+      "Name": "Nagan",
+      "Calibr": "3",
+      "Magazine": 6,
+      "Damage": 7,
+      "Chancecrit": 12
+    },
+    {
+      "Name": "M-16",
+      "Calibr": "7.62",
+      "Magazine": 30,
+      "Damage": 13,
+      "Chancecrit": 39
     }
   ]
 }
