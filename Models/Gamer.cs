@@ -72,8 +72,6 @@ namespace razdolbaizer_3000.Models
                 ChanceMiss += currentChanceMiss * 2;
             }
 
-            
-           
             if(!Gun.Chance)
             {
                 ChanceMiss += currentChanceMiss;
